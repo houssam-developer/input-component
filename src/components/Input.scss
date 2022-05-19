@@ -1,6 +1,7 @@
 :root {
 	--ic-border-color: #555;
 	--ic-color: #444;
+	--ic-color-light: #999;
 	--ic-bg-color: #fff;
 }
 
@@ -24,6 +25,7 @@
 	&--error {
 		--ic-border-color: red;
 		--ic-color: red;
+		--ic-color-light: red;
 
 		&:focus-within {
 			--ic-color: red;
@@ -33,6 +35,7 @@
 		&:hover {
 			--ic-border-color: black;
 			--ic-color: black;
+			--ic-color-light: black;
 		}
 	}
 }
@@ -76,7 +79,7 @@
 	input {
 		padding: 1em 0;
 		border: none;
-		color: inherit;
+		color: #444;
 		background-color: inherit;
 		font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
 		font-weight: 500;
@@ -91,4 +94,10 @@
 		width: 27px;
 		height: 27px;
 	}
+}
+
+.helper-text {
+	font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+	font-weight: 500;
+	color: var(--ic-color-light);
 }

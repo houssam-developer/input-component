@@ -4,9 +4,10 @@ import * as MdIcons from 'react-icons/md';
 function Input({
 	textLabel = 'Label',
 	text = '',
+	helperText = '',
 	placeholder = 'Placeholder',
-	startIcon = 'MdAddShoppingCart',
-	endIcon = 'MdAddShoppingCart',
+	startIcon = '',
+	endIcon = '',
 	disabled,
 	size,
 	error,
@@ -50,6 +51,7 @@ function Input({
 				<input type="text" value={text} placeholder={placeholder} disabled={disabled} />
 				{endIcon ? endIconVal : ''}
 			</div>
+			<span className='helper-text'>{helperText}</span>
 		</div>
 	)
 }
