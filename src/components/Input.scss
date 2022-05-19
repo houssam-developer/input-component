@@ -1,0 +1,86 @@
+:root {
+	--ic-border-color: #555;
+	--ic-color: #444;
+}
+
+.input-component {
+	font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+	font-weight: 500;
+	color: var(--ic-color);
+
+	&:focus-within {
+		--ic-color: var(--color--light-primary);
+	}
+
+	&:hover {
+		--ic-border-color: black;
+	}
+
+	&__label {
+		color: var(--ic-color);
+	}
+
+	&--error {
+		--ic-border-color: red;
+		--ic-color: red;
+
+		&:focus-within {
+			--ic-color: red;
+			--ic-border-color: red;
+		}
+
+		&:hover {
+			--ic-border-color: black;
+			--ic-color: black;
+		}
+	}
+}
+
+
+.container-input {
+	padding: .7em;
+	display: flex;
+	align-items: center;
+	gap: 1em;
+
+	color: inherit;
+	background-color: #fff;
+	border: 1px solid var(--ic-border-color);
+	border-radius: 7px;
+
+	&:focus-within {
+		--ic-border-color: var(--color--light-primary);
+	}
+
+	&:hover {
+		--ic-border-color: black;
+	}
+
+	&--error {
+		&:focus-within {
+			--ic-border-color: red;
+		}
+
+		&:hover {
+			--ic-border-color: black;
+		}
+	}
+
+	input {
+		padding: 1em 0;
+		border: none;
+		background-color: inherit;
+		font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+		font-weight: 500;
+		font-size: inherit;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	svg {
+		width: 27px;
+		height: 27px;
+	}
+}
