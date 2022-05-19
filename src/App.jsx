@@ -13,6 +13,7 @@ function App() {
 			<h1>Hello world</h1>
 			<Input />
 			<Input error />
+			<Input disabled />
 			<Footer></Footer>
 		</div>
 	)

@@ -1,6 +1,7 @@
 :root {
 	--ic-border-color: #555;
 	--ic-color: #444;
+	--ic-bg-color: #fff;
 }
 
 .input-component {
@@ -36,6 +37,12 @@
 	}
 }
 
+.disabled-component,
+.disabled-component input {
+	--ic-border-color: transparent;
+	--ic-bg-color: #ddd;
+	cursor: not-allowed;
+}
 
 .container-input {
 	padding: .7em;
@@ -43,8 +50,8 @@
 	align-items: center;
 	gap: 1em;
 
-	color: inherit;
-	background-color: #fff;
+	color: var(--ic-color);
+	background-color: var(--ic-bg-color);
 	border: 1px solid var(--ic-border-color);
 	border-radius: 7px;
 
@@ -69,6 +76,7 @@
 	input {
 		padding: 1em 0;
 		border: none;
+		color: inherit;
 		background-color: inherit;
 		font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
 		font-weight: 500;
