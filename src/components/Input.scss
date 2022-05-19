@@ -3,6 +3,9 @@
 	--ic-color: #444;
 	--ic-color-light: #999;
 	--ic-bg-color: #fff;
+
+	--ic-padding--block: .5em;
+	--ic-padding--inline: .7em;
 }
 
 .input-component {
@@ -48,7 +51,9 @@
 }
 
 .container-input {
-	padding: .7em;
+	padding: var(--ic-padding--block) var(--ic-padding--inline);
+	width: 100%;
+
 	display: flex;
 	align-items: center;
 	gap: 1em;
@@ -93,6 +98,25 @@
 	svg {
 		width: 27px;
 		height: 27px;
+	}
+
+	&--size--small {
+		--ic-padding--block: 0em;
+		--ic-padding--inline: .7em;
+	}
+
+	&--size--medium {
+		--ic-padding--block: .5em;
+		--ic-padding--inline: .7em;
+	}
+
+	&--size--large {
+		--ic-padding--block: .9em;
+		--ic-padding--inline: 1.4em;
+	}
+
+	&--fullwidth {
+		width: 100%;
 	}
 }
 

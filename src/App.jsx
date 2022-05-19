@@ -53,12 +53,28 @@ function App() {
 				<ToggleButton handleOnClick={(e) => setDisabledIcon(e.target.checked)} />
 				<div className="container-buttons">
 					{
-						disabledIcon ? <Input text="Default" startIcon={targetIcon} />
+						!disabledIcon ? <Input text="Default" startIcon={targetIcon} />
 							: <Input text="Default" color='primary' endIcon={targetIcon} />
 					}
 				</div>
 			</div>
 
+			<div className="container-box">
+				<h2>Text Input</h2>
+				<Input value='Hello world !' />
+			</div>
+
+			<div className="container-box">
+				<h2>Text Input</h2>
+				<Input size='sm' />
+				<Input size='md' />
+				<Input size='lg' />
+			</div>
+
+			<div className="container-box">
+				<h2>Full Width Input</h2>
+				<Input fullWidth />
+			</div>
 
 			<Footer></Footer>
 		</div>

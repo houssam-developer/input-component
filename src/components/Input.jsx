@@ -3,7 +3,7 @@ import * as MdIcons from 'react-icons/md';
 
 function Input({
 	textLabel = 'Label',
-	text = '',
+	value = '',
 	helperText = '',
 	placeholder = 'Placeholder',
 	startIcon = '',
@@ -43,12 +43,19 @@ function Input({
 
 	if (disabled) { setOfClassNames += ` disabled-component`; }
 
+
+	if (size === 'sm') { setOfClassNames += ` container-input--size--small`; }
+	if (size === 'md') { setOfClassNames += ` container-input--size--medium`; }
+	if (size === 'lg') { setOfClassNames += ` container-input--size--large`; }
+
+	if (fullWidth) { setOfClassNames += ` container-input--fullwidth`; }
+
 	return (
 		<div className={setOfClassNames}>
 			<label className='input-component__label' htmlFor="local-input">{textLabel}</label>
 			<div className={setOfClassNamesInput}>
 				{startIcon ? startIconVal : ''}
-				<input type="text" value={text} placeholder={placeholder} disabled={disabled} />
+				<input type="text" value={value} placeholder={placeholder} disabled={disabled} />
 				{endIcon ? endIconVal : ''}
 			</div>
 			<span className='helper-text'>{helperText}</span>
