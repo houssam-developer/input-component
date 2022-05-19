@@ -1,5 +1,6 @@
 import './Input.scss';
 import * as MdIcons from 'react-icons/md';
+import { useState } from 'react';
 
 function Input({
 	textLabel = 'Label',
@@ -12,10 +13,11 @@ function Input({
 	size,
 	error,
 	fullWidth,
-	multiline, row = 2
+	multiline,
+	row = 5
 }) {
 
-
+	const [text, setText] = useState(value);
 	let startIconVal;
 	let endIconVal;
 	let setOfClassNames = 'container-component input-component';
@@ -50,12 +52,16 @@ function Input({
 
 	if (fullWidth) { setOfClassNames += ` container-input--fullwidth`; }
 
+	if (multiline) { setOfClassNamesInput += ` container-input__textarea` }
+
 	return (
 		<div className={setOfClassNames}>
 			<label className='input-component__label' htmlFor="local-input">{textLabel}</label>
 			<div className={setOfClassNamesInput}>
 				{startIcon ? startIconVal : ''}
-				<input type="text" value={value} placeholder={placeholder} disabled={disabled} />
+				{multiline ?
+					<textarea className={setOfClassNamesInput} rows={row} value={text} onChange={(e) => setText(e.target.value)} placeholder={placeholder} disabled={disabled} />
+					: <input type="text" value={disabled ? '' : text} onChange={(e) => setText(e.target.value)} placeholder={placeholder} disabled={disabled} />}
 				{endIcon ? endIconVal : ''}
 			</div>
 			<span className='helper-text'>{helperText}</span>

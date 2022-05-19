@@ -9,6 +9,9 @@ import ToggleButton from './components/ToggleButton';
 
 function App() {
 	const [disabledIcon, setDisabledIcon] = useState(false);
+	const [disabled, setDisabled] = useState(false);
+	const [helperTextFlag, setHelperTextFlag] = useState(false);
+	const [fullWidthFlag, setFullWidthFlag] = useState(false);
 	const [iconsOptions, setIconsOptions] = useState([]);
 	const [targetIcon, setTargetIcon] = useState('MdAddShoppingCart');
 
@@ -26,7 +29,7 @@ function App() {
 
 	return (
 		<div className="container">
-			<h1>Hello world</h1>
+			<h1>Input Component Challenge</h1>
 			<div className="container-box">
 				<h2>Default Input</h2>
 				<Input />
@@ -38,13 +41,26 @@ function App() {
 
 			<div className="container-box">
 				<h2>Disabled Input</h2>
-				<Input disabled />
+				<ToggleButton handleOnClick={(e) => setDisabled(e.target.checked)} />
+				<Input disabled={disabled} />
 			</div>
 
 			<div className="container-box">
 				<h2>Helper Text</h2>
-				<Input helperText='Some Interresting text' />
-				<Input helperText='Some Interresting text' error />
+				<ToggleButton handleOnClick={(e) => setHelperTextFlag(e.target.checked)} />
+				{
+					helperTextFlag ?
+						<>
+							<Input helperText='Some Interresting text' />
+							<Input helperText='Some Interresting text' error />
+						</>
+						:
+						<>
+							<Input />
+							<Input error />
+						</>
+				}
+
 			</div>
 
 			<div className="container-box">
@@ -73,7 +89,13 @@ function App() {
 
 			<div className="container-box">
 				<h2>Full Width Input</h2>
-				<Input fullWidth />
+				<ToggleButton handleOnClick={(e) => setFullWidthFlag(e.target.checked)} />
+				<Input fullWidth={fullWidthFlag} />
+			</div>
+
+			<div className="container-box">
+				<h2>Multiline Input</h2>
+				<Input multiline row={2} />
 			</div>
 
 			<Footer></Footer>

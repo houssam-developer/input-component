@@ -14,7 +14,7 @@
 	color: var(--ic-color);
 
 	&:focus-within {
-		--ic-color: var(--color--light-primary);
+		--ic-border-color: var(--color--light-primary);
 	}
 
 	&:hover {
@@ -91,6 +91,21 @@
 		font-size: inherit;
 
 		&:focus {
+			outline: none;
+		}
+	}
+
+	textarea {
+		font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+		font-weight: 500;
+		color: var(--ic-color);
+		border: none;
+		outline: none;
+		width: 100%;
+
+
+		&:focus {
+			border: none;
 			outline: none;
 		}
 	}
