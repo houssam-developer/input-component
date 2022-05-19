@@ -1,5 +1,4 @@
 import './Select.scss';
-import { v4 as uuidv4 } from 'uuid';
 
 function Select({ text, options, handleChangeEvent }) {
 
@@ -9,7 +8,7 @@ function Select({ text, options, handleChangeEvent }) {
 		<div className="container-select">
 			<h2>{text} Selection</h2>
 			<select className="select" name="buttons" onChange={handleChangeEvent}>
-				{options.map(it => <option key={uuidv4()} value={it}>{it}</option>)}
+				{options.map(it => <option key={it} value={it}>{it}</option>)}
 			</select>
 		</div>
 	)

@@ -81,10 +81,10 @@ function App() {
 			</div>
 
 			<div className="container-box">
-				<h2>Text Input</h2>
-				<Input size='sm' />
-				<Input size='md' />
-				<Input size='lg' />
+				<h2>Size Input</h2>
+				<Input size='sm' textLabel='sm' />
+				<Input size='md' textLabel='md' />
+				<Input size='lg' textLabel='lg' />
 			</div>
 
 			<div className="container-box">
